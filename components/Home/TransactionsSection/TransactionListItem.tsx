@@ -9,13 +9,13 @@ type props = {
 };
 
 const TransactionListItem = (props: props) => {
-  const textColor = props.amount.startsWith("+") ? "#05EF40" : "white";
+  const textColor = props.amount.startsWith("+") ? Colors.greenPrimary : "red";
 
   return (
     <View style={styles.container}>
       <View style={styles.transactionListItemLeft}>
         <ArrowTransactionsSvg />
-        <View>
+        <View style={{ gap: 4 }}>
           <Text style={styles.name}>{props.name}</Text>
           <Text style={styles.dateTime}>{props.bankDetails}</Text>
         </View>
@@ -32,6 +32,9 @@ const styles = StyleSheet.create({
     marginTop: 24,
     flexDirection: "row",
     justifyContent: "space-between",
+    borderBottomWidth: 1,
+    borderColor: "rgba(183, 183, 183,0.3)",
+    paddingBottom: 16,
   },
   transactionListItemLeft: {
     flexDirection: "row",
