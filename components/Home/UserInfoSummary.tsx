@@ -1,16 +1,60 @@
-import { Text, StyleSheet, View } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Alert,
+  Switch,
+} from "react-native";
 
+import * as Clipboard from "expo-clipboard";
+import { CopySvg, UserInfoSummaryDesign } from "../svgs";
+import { useState } from "react";
 import { Colors } from "../../constants/colors";
-import { UserInfoSummaryDesign } from "../svgs";
 
 const UserInfoSummary = () => {
+  const accountNumber = "2040011238";
+
+  const [hideBalance, setHideBalance] = useState(false);
+  const toggleSwitch = () => setHideBalance((previousState) => !previousState);
+
   return (
     <View style={styles.container}>
       <UserInfoSummaryDesign />
       <View style={styles.info}>
         <View style={{ gap: 8 }}>
           <Text style={styles.infoText}>Savings Account Balance</Text>
-          <Text style={styles.priceText}>NGN102,238.71</Text>
+          <Text style={styles.priceText}>
+            {hideBalance ? "..." : "NGN102,238.71"}
+          </Text>
+        </View>
+        <View style={{ gap: 8 }}>
+          <Text style={styles.infoText}>Adewole Temitope</Text>
+          <View style={{ flexDirection: "row", gap: 60 }}>
+            <View style={{ flexDirection: "row", gap: 4 }}>
+              <Text style={styles.infoText}>{accountNumber}</Text>
+              <TouchableOpacity
+                onPress={async () => {
+                  await Clipboard.setStringAsync(accountNumber);
+                  Alert.alert("Account Number Copied!");
+                }}
+              >
+                <CopySvg />
+              </TouchableOpacity>
+            </View>
+            <View
+              style={{ flexDirection: "row", alignItems: "center", gap: 4 }}
+            >
+              <Text style={styles.infoText}>Hide Balance</Text>
+              <Switch
+                trackColor={{ false: "#767577", true: Colors.greenLight }}
+                thumbColor={hideBalance ? Colors.greenAlt : "#f4f3f4"}
+                ios_backgroundColor="#3e3e3e"
+                onValueChange={toggleSwitch}
+                value={hideBalance}
+              />
+            </View>
+          </View>
         </View>
       </View>
     </View>
@@ -26,7 +70,7 @@ const styles = StyleSheet.create({
   info: {
     position: "absolute",
     padding: 32,
-    borderWidth: 1,
+    gap: 32,
   },
   infoText: {
     fontFamily: "Mulish-400",

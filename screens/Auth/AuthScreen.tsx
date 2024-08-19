@@ -4,6 +4,7 @@ import {
   Text,
   StyleSheet,
   ScrollView,
+  ActivityIndicator,
 } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import CustomButtonA from "../../components/UI/CustomButtonA";
@@ -45,8 +46,12 @@ const AuthScreen = (props: AuthScreenProps) => {
   });
 
   const [passwordVisibile, setPasswordVisible] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const onSubmit = () => props.navigation.navigate("App");
+  const onSubmit = () => {
+    setSubmitting(true);
+    props.navigation.navigate("App");
+  };
 
   return (
     <SafeAreaView style={styles.screen}>
@@ -138,7 +143,13 @@ const AuthScreen = (props: AuthScreenProps) => {
             <Text style={styles.errorText}>{errors.password.message}</Text>
           )}
         </View>
-        <CustomButtonA onPress={handleSubmit(onSubmit)}>Login</CustomButtonA>
+        <CustomButtonA onPress={handleSubmit(onSubmit)}>
+          {submitting ? (
+            <ActivityIndicator size="large" color={Colors.greenLight} />
+          ) : (
+            "Login"
+          )}
+        </CustomButtonA>
         <View style={styles.optionsContainer}>
           <TouchableOpacity>
             <Text style={styles.signUpText}>

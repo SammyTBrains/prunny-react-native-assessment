@@ -13,3 +13,4 @@ export * from "./TabsSvgs/TransactionsInActive";
 
 export * from "./ProfileTestSvg";
 export * from "./UserInfoSummaryDesign";
+export * from "./CopySvg";
