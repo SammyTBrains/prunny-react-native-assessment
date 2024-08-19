@@ -1,12 +1,14 @@
 import { ScrollView, StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import HomeHeader from "../../components/Home/HomeHeader";
+import UserInfoSummary from "../../components/Home/UserInfoSummary";
 
 const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <HomeHeader />
+        <UserInfoSummary />
       </ScrollView>
     </SafeAreaView>
   );
