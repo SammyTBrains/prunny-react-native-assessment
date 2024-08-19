@@ -2,6 +2,7 @@ export const Colors = {
   appOrange: "#FF8600",
   greyDark: "#6E717C",
   appGrey: "#F9FAFC",
+  greyAlt: "#666666",
   greyLight: "#EFF2F7",
   appGreen: "#7A9F56",
   greenLight: "#E1EAD6",

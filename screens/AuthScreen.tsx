@@ -1,4 +1,10 @@
-import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  ScrollView,
+} from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import CustomButtonA from "../components/UI/CustomButtonA";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -44,100 +50,106 @@ const AuthScreen = (props: AuthScreenProps) => {
 
   return (
     <SafeAreaView style={styles.screen}>
-      <View style={styles.pageTopSectionContainer}>
-        <View style={styles.logoImage}>
-          <OutlinedButton onPress={() => {}}>Cancel</OutlinedButton>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.pageTopSectionContainer}>
+          <View style={styles.logoImage}>
+            <OutlinedButton onPress={() => {}}>Cancel</OutlinedButton>
+          </View>
+          <Text style={styles.topText}>Login to your account</Text>
+          <Text style={styles.infoText}>
+            We are glad to have you, kindly enter
+          </Text>
+          <Text style={styles.infoText}>your login details.</Text>
         </View>
-        <Text style={styles.topText}>Login to your account</Text>
-        <Text style={styles.infoText}>
-          We are glad to have you, kindly enter
-        </Text>
-        <Text style={styles.infoText}> your login details.</Text>
-      </View>
 
-      <View style={styles.formContainer}>
-        <Controller
-          control={control}
-          rules={{
-            required: {
-              value: true,
-              message: "This is required.",
-            },
-            pattern: {
-              value: /^\+?(\d{2,3})?[-\.\s]?\d{3}[-\.\s]?\d{4}$/,
-              message: "Invalid phone number.",
-            },
-          }}
-          render={({ field: { onChange, onBlur, value } }) => {
-            return (
+        <View style={styles.formContainer}>
+          <Controller
+            control={control}
+            rules={{
+              required: {
+                value: true,
+                message: "This is required.",
+              },
+              pattern: {
+                value: /^\+?(\d{2,3})?[-\.\s]?\d{3}[-\.\s]?\d{4}$/,
+                message: "Invalid phone number.",
+              },
+            }}
+            render={({ field: { onChange, onBlur, value } }) => {
+              return (
+                <FloatingInput
+                  onBlur={onBlur}
+                  onChangeText={(text) => onChange(text)}
+                  value={value}
+                  autoCapitalize="none"
+                  keyboardType="phone-pad"
+                  leftIcon={
+                    <Ionicons name="call" size={18} color={Colors.greyDark} />
+                  }
+                  label="Phone Number"
+                />
+              );
+            }}
+            name="phoneNumber"
+          />
+
+          {errors.phoneNumber && (
+            <Text style={styles.errorText}>{errors.phoneNumber.message}</Text>
+          )}
+
+          <Controller
+            control={control}
+            rules={{
+              required: {
+                value: true,
+                message: "This is required.",
+              },
+              minLength: { value: 4, message: "Password too short." },
+              maxLength: { value: 12, message: "Password too long." },
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
               <FloatingInput
+                containerStyle={{ marginTop: 16 }}
+                leftIcon={<LockSvg />}
+                label="Your Password"
                 onBlur={onBlur}
                 onChangeText={(text) => onChange(text)}
                 value={value}
-                autoCapitalize="none"
-                keyboardType="phone-pad"
-                leftIcon={
-                  <Ionicons name="call" size={18} color={Colors.greyDark} />
+                secureTextEntry={passwordVisibile ? false : true}
+                rightElement={
+                  <TouchableOpacity
+                    onPress={() => {
+                      setPasswordVisible((prev) => !prev);
+                    }}
+                  >
+                    <Ionicons
+                      name={passwordVisibile ? "eye" : "eye-off"}
+                      size={23}
+                      color={Colors.greyDark}
+                    />
+                  </TouchableOpacity>
                 }
-                label="Phone Number"
               />
-            );
-          }}
-          name="phoneNumber"
-        />
+            )}
+            name="password"
+          />
 
-        {errors.phoneNumber && (
-          <Text style={styles.errorText}>{errors.phoneNumber.message}</Text>
-        )}
-
-        <Controller
-          control={control}
-          rules={{
-            required: {
-              value: true,
-              message: "This is required.",
-            },
-            minLength: { value: 4, message: "Password too short." },
-            maxLength: { value: 12, message: "Password too long." },
-          }}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <FloatingInput
-              containerStyle={{ marginTop: 16 }}
-              leftIcon={<LockSvg />}
-              label="Your Password"
-              onBlur={onBlur}
-              onChangeText={(text) => onChange(text)}
-              value={value}
-              secureTextEntry={passwordVisibile ? false : true}
-              rightElement={
-                <TouchableOpacity
-                  onPress={() => {
-                    setPasswordVisible((prev) => !prev);
-                  }}
-                >
-                  <Ionicons
-                    name={passwordVisibile ? "eye" : "eye-off"}
-                    size={23}
-                    color={Colors.greyDark}
-                  />
-                </TouchableOpacity>
-              }
-            />
+          {errors.password && (
+            <Text style={styles.errorText}>{errors.password.message}</Text>
           )}
-          name="password"
-        />
-
-        {errors.password && (
-          <Text style={styles.errorText}>{errors.password.message}</Text>
-        )}
-      </View>
-      <CustomButtonA onPress={handleSubmit(onSubmit)}>Login</CustomButtonA>
-      <View style={styles.authStateContainer}>
-        <TouchableOpacity>
-          <Text style={styles.authStateButtonText}>Sign up</Text>
-        </TouchableOpacity>
-        <Text style={styles.authStateText}> instead</Text>
-      </View>
+        </View>
+        <CustomButtonA onPress={handleSubmit(onSubmit)}>Login</CustomButtonA>
+        <View style={styles.authStateContainer}>
+          <TouchableOpacity>
+            <Text style={styles.signUpText}>
+              Don’t have an account? Sign up
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.forgotText}>Forgot Password?</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -147,12 +159,12 @@ export default AuthScreen;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    padding: 20,
+    paddingHorizontal: 20,
   },
   pageTopSectionContainer: {
     justifyContent: "center",
     alignItems: "flex-start",
-    marginTop: 60,
+    marginTop: 40,
   },
   logoImage: { marginBottom: 42 },
   infoText: {
@@ -174,26 +186,25 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     marginBottom: 15,
   },
-
-  forgotText: {
-    color: Colors.appOrange,
-    fontFamily: "Satoshi-400",
-    fontSize: 14,
-  },
   authStateContainer: {
-    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 10,
+    marginTop: 24,
+    gap: 24,
   },
   authStateText: {
     fontSize: 14,
     color: Colors.greyDark,
     fontFamily: "Satoshi-400",
   },
-  authStateButtonText: {
-    color: Colors.appOrange,
-    fontFamily: "Satoshi-400",
+  signUpText: {
+    color: Colors.greenMedium,
+    fontFamily: "Mulish-400",
+    fontSize: 14,
+  },
+  forgotText: {
+    color: Colors.greyAlt,
+    fontFamily: "Mulish-400",
     fontSize: 14,
   },
   errorText: {

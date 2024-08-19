@@ -22,6 +22,7 @@ export default function App() {
     "Satoshi-500": require("./assets/fonts/Satoshi-Medium.otf"),
     "Mulish-700": require("./assets/fonts/Mulish-Bold.ttf"),
     "Mulish-500": require("./assets/fonts/Mulish-SemiBold.ttf"),
+    "Mulish-400": require("./assets/fonts/Mulish-Regular.ttf"),
   });
 
   const onLayoutRootView = useCallback(async () => {
