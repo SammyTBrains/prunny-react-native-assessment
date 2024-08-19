@@ -9,6 +9,7 @@ import { FloatingInput } from "../components/UI/FloatingInput";
 import { Ionicons } from "@expo/vector-icons";
 import { LockSvg } from "../components/svgs";
 import OutlinedButton from "../components/UI/OutlinedButton";
+import { useState } from "react";
 
 type FormData = {
   phoneNumber: string;
@@ -36,6 +37,8 @@ const AuthScreen = (props: AuthScreenProps) => {
       password: "",
     },
   });
+
+  const [passwordVisibile, setPasswordVisible] = useState(false);
 
   const onSubmit = () => props.navigation.navigate("UsersScreen");
 
@@ -105,10 +108,18 @@ const AuthScreen = (props: AuthScreenProps) => {
               onBlur={onBlur}
               onChangeText={(text) => onChange(text)}
               value={value}
-              secureTextEntry
+              secureTextEntry={passwordVisibile ? false : true}
               rightElement={
-                <TouchableOpacity onPress={() => alert("Forgot password?")}>
-                  <Text style={styles.forgotText}>Forgot?</Text>
+                <TouchableOpacity
+                  onPress={() => {
+                    setPasswordVisible((prev) => !prev);
+                  }}
+                >
+                  <Ionicons
+                    name={passwordVisibile ? "eye" : "eye-off"}
+                    size={23}
+                    color={Colors.greyDark}
+                  />
                 </TouchableOpacity>
               }
             />
