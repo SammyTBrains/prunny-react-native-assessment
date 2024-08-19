@@ -6,11 +6,12 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootNavParamList } from "../type-utilities/type";
 import { Colors } from "../constants/colors";
 import { FloatingInput } from "../components/UI/FloatingInput";
-import { LockSvg, LogoSvg, MailSvg } from "../components/svgs";
+import { Ionicons } from "@expo/vector-icons";
+import { LockSvg } from "../components/svgs";
 import OutlinedButton from "../components/UI/OutlinedButton";
 
 type FormData = {
-  email: string;
+  phoneNumber: string;
   password: string;
 };
 
@@ -31,7 +32,7 @@ const AuthScreen = (props: AuthScreenProps) => {
   } = useForm<FormData>({
     mode: "onBlur",
     defaultValues: {
-      email: "",
+      phoneNumber: "",
       password: "",
     },
   });
@@ -60,8 +61,8 @@ const AuthScreen = (props: AuthScreenProps) => {
               message: "This is required.",
             },
             pattern: {
-              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-              message: "Invalid email address.",
+              value: /^\+?(\d{2,3})?[-\.\s]?\d{3}[-\.\s]?\d{4}$/,
+              message: "Invalid phone number.",
             },
           }}
           render={({ field: { onChange, onBlur, value } }) => {
@@ -71,17 +72,19 @@ const AuthScreen = (props: AuthScreenProps) => {
                 onChangeText={(text) => onChange(text)}
                 value={value}
                 autoCapitalize="none"
-                keyboardType="email-address"
-                leftIcon={<MailSvg />}
-                label="Hello"
+                keyboardType="phone-pad"
+                leftIcon={
+                  <Ionicons name="call" size={18} color={Colors.greyDark} />
+                }
+                label="Phone Number"
               />
             );
           }}
-          name="email"
+          name="phoneNumber"
         />
 
-        {errors.email && (
-          <Text style={styles.errorText}>{errors.email.message}</Text>
+        {errors.phoneNumber && (
+          <Text style={styles.errorText}>{errors.phoneNumber.message}</Text>
         )}
 
         <Controller
@@ -98,7 +101,7 @@ const AuthScreen = (props: AuthScreenProps) => {
             <FloatingInput
               containerStyle={{ marginTop: 16 }}
               leftIcon={<LockSvg />}
-              label="Password"
+              label="Your Password"
               onBlur={onBlur}
               onChangeText={(text) => onChange(text)}
               value={value}

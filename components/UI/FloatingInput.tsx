@@ -45,8 +45,8 @@ export const FloatingInput = forwardRef<TextInput, IProps>(
     );
 
     const floatingLabelStyle = useAnimatedStyle(() => {
-      const fontSize = interpolate(isFocusStyle.value, [0, 1], [14, 12]);
-      const translateY = interpolate(isFocusStyle.value, [0, 1], [0, -15]);
+      const fontSize = interpolate(isFocusStyle.value, [0, 1], [14, 14]);
+      const translateY = interpolate(isFocusStyle.value, [0, 1], [0, -29]);
       return {
         fontSize,
         transform: [{ translateY }],
@@ -99,13 +99,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     position: "relative",
-    backgroundColor: Colors.appGrey,
+    backgroundColor: Colors.white,
   },
   labelStyle: {
     position: "absolute",
     left: 0,
-    fontFamily: "Satoshi-400",
-    color: Colors.greyDark,
+    fontFamily: "Mulish-500",
+    color: Colors.black,
   },
   inputContainer: {
     flexDirection: "row",
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     height: 56,
     paddingHorizontal: 15,
-    backgroundColor: Colors.appGrey,
+    backgroundColor: Colors.white,
   },
 
   input: {
