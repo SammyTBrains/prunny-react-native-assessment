@@ -10,3 +10,5 @@ export * from "./TabsSvgs/MoreActive";
 export * from "./TabsSvgs/MoreInActive";
 export * from "./TabsSvgs/TransactionsActive";
 export * from "./TabsSvgs/TransactionsInActive";
+
+export * from "./ProfileTestSvg";

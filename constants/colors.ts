@@ -11,4 +11,5 @@ export const Colors = {
   greenPrimary: "#208220",
   white: "#ffffff",
   black: "#101828",
+  blackAlt: "#333333",
 };
