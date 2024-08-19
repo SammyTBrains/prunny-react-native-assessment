@@ -6,15 +6,15 @@ import {
   ScrollView,
 } from "react-native";
 import { useForm, Controller } from "react-hook-form";
-import CustomButtonA from "../components/UI/CustomButtonA";
+import CustomButtonA from "../../components/UI/CustomButtonA";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootNavParamList } from "../type-utilities/type";
-import { Colors } from "../constants/colors";
-import { FloatingInput } from "../components/UI/FloatingInput";
+import { RootNavParamList } from "../../type-utilities/type";
+import { Colors } from "../../constants/colors";
+import { FloatingInput } from "../../components/UI/FloatingInput";
 import { Ionicons } from "@expo/vector-icons";
-import { BiometricSvg, LockSvg } from "../components/svgs";
-import OutlinedButton from "../components/UI/OutlinedButton";
+import { BiometricSvg, LockSvg } from "../../components/svgs";
+import OutlinedButton from "../../components/UI/OutlinedButton";
 import { useState } from "react";
 
 type FormData = {
@@ -24,7 +24,7 @@ type FormData = {
 
 type UsersScreenScreenNavigationProp = NativeStackNavigationProp<
   RootNavParamList,
-  "UsersScreen"
+  "Home"
 >;
 
 type AuthScreenProps = {
@@ -46,7 +46,7 @@ const AuthScreen = (props: AuthScreenProps) => {
 
   const [passwordVisibile, setPasswordVisible] = useState(false);
 
-  const onSubmit = () => props.navigation.navigate("UsersScreen");
+  const onSubmit = () => props.navigation.navigate("App");
 
   return (
     <SafeAreaView style={styles.screen}>
@@ -71,7 +71,7 @@ const AuthScreen = (props: AuthScreenProps) => {
                 message: "This is required.",
               },
               pattern: {
-                value: /^\+?(\d{2,3})?[-\.\s]?\d{3}[-\.\s]?\d{4}$/,
+                value: /^\+?(\d{1,3})?[-\.\s]?\d{6,11}$/,
                 message: "Invalid phone number.",
               },
             }}
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   topText: {
-    color: Colors.greenMedium,
+    color: Colors.greenPrimary,
     fontFamily: "Mulish-500",
     fontSize: 24,
     marginBottom: 14,
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 20,
-    marginBottom: 15,
+    marginVertical: 15,
   },
   authStateContainer: {
     alignItems: "center",
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     fontFamily: "Satoshi-400",
   },
   signUpText: {
-    color: Colors.greenMedium,
+    color: Colors.greenPrimary,
     fontFamily: "Mulish-400",
     fontSize: 14,
   },

@@ -1,6 +1,10 @@
 export type RootNavParamList = {
-  LoginScreen: undefined;
-  UsersScreen: undefined;
+  AuthScreen: undefined;
+  App: undefined;
+  Home: undefined;
+  Budgets: undefined;
+  Insights: undefined;
+  Profile: undefined;
 };
 
 export type UserDataType = {

@@ -19,7 +19,7 @@ const OutlinedButton = (props: Props) => {
         style={styles.icon}
         name={props.icon as any}
         size={18}
-        color={Colors.greenPrimary}
+        color={Colors.greenAlt}
       />
       <Text style={styles.text}>{props.children}</Text>
     </Pressable>
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderWidth: 1,
-    borderColor: Colors.greenPrimary,
+    borderColor: Colors.greenAlt,
     borderRadius: 12,
     width: 90,
     height: 35,
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     marginRight: 6,
   },
   text: {
-    color: Colors.greenPrimary,
+    color: Colors.greenAlt,
     fontFamily: "Mulish-700",
   },
 });
