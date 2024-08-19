@@ -31,7 +31,9 @@ const UserInfoSummary = () => {
         <View style={{ gap: 8 }}>
           <Text style={styles.infoText}>Adewole Temitope</Text>
           <View style={{ flexDirection: "row", gap: 60 }}>
-            <View style={{ flexDirection: "row", gap: 4 }}>
+            <View
+              style={{ flexDirection: "row", gap: 4, alignItems: "center" }}
+            >
               <Text style={styles.infoText}>{accountNumber}</Text>
               <TouchableOpacity
                 onPress={async () => {
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
   },
   info: {
     position: "absolute",
-    padding: 32,
+    padding: 30,
     gap: 32,
   },
   infoText: {

@@ -46,11 +46,12 @@ const AuthScreen = (props: AuthScreenProps) => {
   });
 
   const [passwordVisibile, setPasswordVisible] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
+  // const [submitting, setSubmitting] = useState(false);
 
   const onSubmit = () => {
-    setSubmitting(true);
+    // setSubmitting(true);
     props.navigation.navigate("App");
+    // setSubmitting(false);
   };
 
   return (
@@ -144,11 +145,12 @@ const AuthScreen = (props: AuthScreenProps) => {
           )}
         </View>
         <CustomButtonA onPress={handleSubmit(onSubmit)}>
-          {submitting ? (
+          {/* {submitting ? (
             <ActivityIndicator size="large" color={Colors.greenLight} />
           ) : (
             "Login"
-          )}
+          )} */}
+          Login
         </CustomButtonA>
         <View style={styles.optionsContainer}>
           <TouchableOpacity>
