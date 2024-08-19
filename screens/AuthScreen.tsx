@@ -13,7 +13,7 @@ import { RootNavParamList } from "../type-utilities/type";
 import { Colors } from "../constants/colors";
 import { FloatingInput } from "../components/UI/FloatingInput";
 import { Ionicons } from "@expo/vector-icons";
-import { LockSvg } from "../components/svgs";
+import { BiometricSvg, LockSvg } from "../components/svgs";
 import OutlinedButton from "../components/UI/OutlinedButton";
 import { useState } from "react";
 
@@ -148,6 +148,18 @@ const AuthScreen = (props: AuthScreenProps) => {
           <TouchableOpacity>
             <Text style={styles.forgotText}>Forgot Password?</Text>
           </TouchableOpacity>
+          <TouchableOpacity>
+            <BiometricSvg />
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: 32,
+          }}
+        >
+          <Text style={styles.versionText}>v1.1.1</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -203,6 +215,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   forgotText: {
+    color: Colors.greyAlt,
+    fontFamily: "Mulish-400",
+    fontSize: 14,
+  },
+  versionText: {
     color: Colors.greyAlt,
     fontFamily: "Mulish-400",
     fontSize: 14,
