@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import HomeHeader from "../../components/Home/HomeHeader";
 import UserInfoSummary from "../../components/Home/UserInfoSummary";
+import TransactionsSection from "../../components/Home/TransactionsSection/TransactionsSection";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <HomeHeader />
         <UserInfoSummary />
+        <TransactionsSection />
       </ScrollView>
     </SafeAreaView>
   );
