@@ -1,14 +1,14 @@
 import { Text, View, StyleSheet } from "react-native";
 
-const Budgets = () => {
+const More = () => {
   return (
     <View style={styles.container}>
-      <Text>Budgets Screen</Text>
+      <Text>More Screen</Text>
     </View>
   );
 };
 
-export default Budgets;
+export default More;
 
 const styles = StyleSheet.create({
   container: {

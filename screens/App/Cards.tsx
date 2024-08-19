@@ -1,14 +1,14 @@
 import { Text, View, StyleSheet } from "react-native";
 
-const Profile = () => {
+const Cards = () => {
   return (
     <View style={styles.container}>
-      <Text>Profile Screen</Text>
+      <Text>Cards Screen</Text>
     </View>
   );
 };
 
-export default Profile;
+export default Cards;
 
 const styles = StyleSheet.create({
   container: {

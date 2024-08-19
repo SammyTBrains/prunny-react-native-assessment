@@ -1,14 +1,14 @@
 import { Text, View, StyleSheet } from "react-native";
 
-const Insights = () => {
+const Transactions = () => {
   return (
     <View style={styles.container}>
-      <Text>Insights Screen</Text>
+      <Text>Transactions Screen</Text>
     </View>
   );
 };
 
-export default Insights;
+export default Transactions;
 
 const styles = StyleSheet.create({
   container: {

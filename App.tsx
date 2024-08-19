@@ -14,9 +14,19 @@ import { RootNavParamList } from "./type-utilities/type";
 import { Colors } from "./constants/colors";
 import Home from "./screens/App/Home";
 import { Ionicons } from "@expo/vector-icons";
-import Budgets from "./screens/App/Budgets";
-import Insights from "./screens/App/Insights";
-import Profile from "./screens/App/Profile";
+import Transactions from "./screens/App/Transactions";
+import Cards from "./screens/App/Cards";
+import More from "./screens/App/More";
+import {
+  CreditCardActive,
+  CreditCardInActive,
+  HomeActive,
+  HomeInActive,
+  MoreActive,
+  MoreInActive,
+  TransactionsActive,
+  TransactionsInActive,
+} from "./components/svgs";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator<RootNavParamList>();
@@ -49,63 +59,42 @@ export default function App() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: Colors.greenPrimary,
+          backgroundColor: "white",
         },
-        tabBarShowLabel: false,
-        tabBarActiveTintColor: "white",
-        tabBarInactiveTintColor: "white",
+        tabBarActiveTintColor: Colors.greenPrimary,
+        tabBarInactiveTintColor: Colors.greyAlt30,
       }}
     >
       <BottomTabs.Screen
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: ({ color, size, focused }) => (
-            <Ionicons
-              name={focused ? "home" : "home-outline"}
-              color={color}
-              size={size}
-            />
-          ),
+          tabBarIcon: ({ focused }) =>
+            focused ? <HomeActive /> : <HomeInActive />,
         }}
       />
       <BottomTabs.Screen
-        name="Budgets"
-        component={Budgets}
+        name="Transactions"
+        component={Transactions}
         options={{
-          tabBarIcon: ({ color, size, focused }) => (
-            <Ionicons
-              name={focused ? "pie-chart" : "pie-chart-outline"}
-              color={color}
-              size={size}
-            />
-          ),
+          tabBarIcon: ({ focused }) =>
+            focused ? <TransactionsActive /> : <TransactionsInActive />,
         }}
       />
       <BottomTabs.Screen
-        name="Insights"
-        component={Insights}
+        name="Cards"
+        component={Cards}
         options={{
-          tabBarIcon: ({ color, size, focused }) => (
-            <Ionicons
-              name={focused ? "bar-chart" : "bar-chart-outline"}
-              color={color}
-              size={size}
-            />
-          ),
+          tabBarIcon: ({ focused }) =>
+            focused ? <CreditCardActive /> : <CreditCardInActive />,
         }}
       />
       <BottomTabs.Screen
-        name="Profile"
-        component={Profile}
+        name="More"
+        component={More}
         options={{
-          tabBarIcon: ({ color, size, focused }) => (
-            <Ionicons
-              name={focused ? "person" : "person-outline"}
-              color={color}
-              size={size}
-            />
-          ),
+          tabBarIcon: ({ focused }) =>
+            focused ? <MoreActive /> : <MoreInActive />,
         }}
       />
     </BottomTabs.Navigator>
