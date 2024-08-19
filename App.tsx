@@ -20,6 +20,8 @@ export default function App() {
     "Satoshi-400": require("./assets/fonts/Satoshi-Regular.otf"),
     "Satoshi-600": require("./assets/fonts/Satoshi-Black.otf"),
     "Satoshi-500": require("./assets/fonts/Satoshi-Medium.otf"),
+    "Mulish-700": require("./assets/fonts/Mulish-Bold.ttf"),
+    "Mulish-500": require("./assets/fonts/Mulish-SemiBold.ttf"),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -33,7 +35,7 @@ export default function App() {
   }
   return (
     <>
-      <StatusBar style='dark' />
+      <StatusBar style="dark" />
       <SafeAreaProvider>
         <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
           <NavigationContainer>
@@ -44,13 +46,13 @@ export default function App() {
               }}
             >
               <Stack.Screen
-                name='LoginScreen'
+                name="LoginScreen"
                 component={AuthScreen}
                 options={{
                   title: "Authentication",
                 }}
               />
-              <Stack.Screen name='UsersScreen' component={UsersScreen} />
+              <Stack.Screen name="UsersScreen" component={UsersScreen} />
             </Stack.Navigator>
           </NavigationContainer>
         </View>

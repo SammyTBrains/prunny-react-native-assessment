@@ -7,6 +7,7 @@ import { RootNavParamList } from "../type-utilities/type";
 import { Colors } from "../constants/colors";
 import { FloatingInput } from "../components/UI/FloatingInput";
 import { LockSvg, LogoSvg, MailSvg } from "../components/svgs";
+import OutlinedButton from "../components/UI/OutlinedButton";
 
 type FormData = {
   email: string;
@@ -41,15 +42,13 @@ const AuthScreen = (props: AuthScreenProps) => {
     <SafeAreaView style={styles.screen}>
       <View style={styles.pageTopSectionContainer}>
         <View style={styles.logoImage}>
-          <LogoSvg />
+          <OutlinedButton onPress={() => {}}>Cancel</OutlinedButton>
         </View>
-        <Text style={styles.topText}>Welcome!</Text>
+        <Text style={styles.topText}>Login to your account</Text>
         <Text style={styles.infoText}>
-          Sign up or log in to your account to
+          We are glad to have you, kindly enter
         </Text>
-        <Text style={styles.infoText}>
-          manage access to your users smartly.
-        </Text>
+        <Text style={styles.infoText}> your login details.</Text>
       </View>
 
       <View style={styles.formContainer}>
@@ -71,14 +70,14 @@ const AuthScreen = (props: AuthScreenProps) => {
                 onBlur={onBlur}
                 onChangeText={(text) => onChange(text)}
                 value={value}
-                autoCapitalize='none'
-                keyboardType='email-address'
+                autoCapitalize="none"
+                keyboardType="email-address"
                 leftIcon={<MailSvg />}
-                label='Hello'
+                label="Hello"
               />
             );
           }}
-          name='email'
+          name="email"
         />
 
         {errors.email && (
@@ -99,7 +98,7 @@ const AuthScreen = (props: AuthScreenProps) => {
             <FloatingInput
               containerStyle={{ marginTop: 16 }}
               leftIcon={<LockSvg />}
-              label='Password'
+              label="Password"
               onBlur={onBlur}
               onChangeText={(text) => onChange(text)}
               value={value}
@@ -111,7 +110,7 @@ const AuthScreen = (props: AuthScreenProps) => {
               }
             />
           )}
-          name='password'
+          name="password"
         />
 
         {errors.password && (
@@ -134,12 +133,11 @@ export default AuthScreen;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    alignItems: "center",
     padding: 20,
   },
   pageTopSectionContainer: {
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "flex-start",
     marginTop: 60,
   },
   logoImage: { marginBottom: 42 },
@@ -151,9 +149,9 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   topText: {
-    color: Colors.appPurple,
-    fontFamily: "Satoshi-700",
-    fontSize: 32,
+    color: Colors.greenMedium,
+    fontFamily: "Mulish-500",
+    fontSize: 24,
     marginBottom: 14,
   },
   formContainer: {
