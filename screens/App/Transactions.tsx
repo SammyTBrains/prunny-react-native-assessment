@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from "react-native";
 const Transactions = () => {
   return (
     <View style={styles.container}>
-      <Text>Transactions Screen</Text>
+      <Text style={{ fontFamily: "Mulish-400" }}>Transactions Screen</Text>
     </View>
   );
 };

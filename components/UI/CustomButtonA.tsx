@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
-    fontFamily: "Satoshi-700",
+    fontFamily: "Mulish-700",
     fontSize: 16,
     color: "white",
   },

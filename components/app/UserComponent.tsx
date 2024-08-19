@@ -57,7 +57,7 @@ export default UserComponent;
 const styles = StyleSheet.create({
   status: {
     fontSize: 10.58,
-    fontFamily: "Satoshi-400",
+    fontFamily: "Mulish-400",
     lineHeight: 18,
   },
   container: {
@@ -82,16 +82,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginRight: 13,
   },
-  initials: { fontSize: 16, fontFamily: "Satoshi-500" },
+  initials: { fontSize: 16, fontFamily: "Mulish-500" },
   topText: {
     fontSize: 13,
-    fontFamily: "Satoshi-500",
+    fontFamily: "Mulish-500",
     marginBottom: 3,
   },
   secondText: {
     fontSize: 11,
     color: Colors.greyDark,
-    fontFamily: "Satoshi-400",
+    fontFamily: "Mulish-400",
   },
   statusContainer: {
     borderRadius: 17,

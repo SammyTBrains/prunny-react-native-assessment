@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from "react-native";
 const More = () => {
   return (
     <View style={styles.container}>
-      <Text>More Screen</Text>
+      <Text style={{ fontFamily: "Mulish-400" }}>More Screen</Text>
     </View>
   );
 };

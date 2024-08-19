@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const Home = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Text>Home Screen</Text>
       </ScrollView>

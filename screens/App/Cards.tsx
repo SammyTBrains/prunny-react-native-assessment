@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from "react-native";
 const Cards = () => {
   return (
     <View style={styles.container}>
-      <Text>Cards Screen</Text>
+      <Text style={{ fontFamily: "Mulish-400" }}>Cards Screen</Text>
     </View>
   );
 };

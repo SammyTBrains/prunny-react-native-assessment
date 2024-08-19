@@ -52,7 +52,7 @@ const AuthScreen = (props: AuthScreenProps) => {
     <SafeAreaView style={styles.screen}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.pageTopSectionContainer}>
-          <View style={styles.logoImage}>
+          <View style={styles.cancelContainer}>
             <OutlinedButton onPress={() => {}}>Cancel</OutlinedButton>
           </View>
           <Text style={styles.topText}>Login to your account</Text>
@@ -139,7 +139,7 @@ const AuthScreen = (props: AuthScreenProps) => {
           )}
         </View>
         <CustomButtonA onPress={handleSubmit(onSubmit)}>Login</CustomButtonA>
-        <View style={styles.authStateContainer}>
+        <View style={styles.optionsContainer}>
           <TouchableOpacity>
             <Text style={styles.signUpText}>
               Don’t have an account? Sign up
@@ -178,12 +178,12 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     marginTop: 40,
   },
-  logoImage: { marginBottom: 42 },
+  cancelContainer: { marginBottom: 42 },
   infoText: {
     color: Colors.greyDark,
-    fontSize: 16,
+    fontSize: 14,
     textAlign: "center",
-    fontFamily: "Satoshi-400",
+    fontFamily: "Mulish-med",
     marginBottom: 5,
   },
   topText: {
@@ -198,16 +198,11 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     marginVertical: 15,
   },
-  authStateContainer: {
+  optionsContainer: {
     alignItems: "center",
     justifyContent: "center",
     marginTop: 24,
     gap: 24,
-  },
-  authStateText: {
-    fontSize: 14,
-    color: Colors.greyDark,
-    fontFamily: "Satoshi-400",
   },
   signUpText: {
     color: Colors.greenPrimary,

@@ -122,6 +122,6 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     width: "100%",
-    fontFamily: "Satoshi-500",
+    fontFamily: "Mulish-500",
   },
 });
