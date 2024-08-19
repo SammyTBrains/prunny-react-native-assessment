@@ -35,17 +35,20 @@ const TransactionsSection = () => {
         <TransctionListItem
           name="Grace Ameh"
           bankDetails="15 Oct 2022, 10:00PM"
-          amount="+N20,983"
+          transactionAmount="+N20,983"
+          balance="NGN156,203.94"
         />
         <TransctionListItem
           name="Habib Yogurt"
           bankDetails="15 Oct 2022, 10:00PM"
-          amount="-N20,983"
+          transactionAmount="-N20,983"
+          balance="NGN156,203.94"
         />
         <TransctionListItem
           name="Kane Ritchie"
           bankDetails="15 Oct 2022, 10:00PM"
-          amount="-N20,000"
+          transactionAmount="-N20,000"
+          balance="NGN156,203.94"
         />
       </View>
     </View>

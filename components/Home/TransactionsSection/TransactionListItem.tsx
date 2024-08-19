@@ -5,22 +5,30 @@ import { Colors } from "../../../constants/colors";
 type props = {
   name: string;
   bankDetails: string;
-  amount: string;
+  transactionAmount: string;
+  balance: string;
 };
 
 const TransactionListItem = (props: props) => {
-  const textColor = props.amount.startsWith("+") ? Colors.greenPrimary : "red";
+  const textColor = props.transactionAmount.startsWith("+")
+    ? Colors.greenPrimary
+    : "red";
 
   return (
     <View style={styles.container}>
       <View style={styles.transactionListItemLeft}>
         <ArrowTransactionsSvg />
-        <View style={{ gap: 4 }}>
+        <View style={{ gap: 8 }}>
           <Text style={styles.name}>{props.name}</Text>
-          <Text style={styles.dateTime}>{props.bankDetails}</Text>
+          <Text style={styles.smallText}>{props.bankDetails}</Text>
         </View>
       </View>
-      <Text style={[styles.amount, { color: textColor }]}>{props.amount}</Text>
+      <View style={{ gap: 8 }}>
+        <Text style={[styles.amount, { color: textColor }]}>
+          {props.transactionAmount}
+        </Text>
+        <Text style={styles.smallText}>{props.balance}</Text>
+      </View>
     </View>
   );
 };
@@ -54,7 +62,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: "Mulish-400",
   },
-  dateTime: {
+  smallText: {
     color: Colors.greyAlt,
     fontSize: 10,
     fontFamily: "Mulish-400",
