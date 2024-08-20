@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Colors } from "../../../constants/colors";
 import React from "react";
 
@@ -10,31 +10,35 @@ type props = {
 
 const ServicesListItem = (props: props) => {
   return (
-    <View
-      style={{
-        gap: 8,
-      }}
-    >
+    <TouchableOpacity style={styles.container}>
       <View style={[styles.serviceBG, { backgroundColor: props.bgColor }]}>
         {props.svg}
       </View>
       <Text style={styles.serviceText}>{props.serviceText}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
 export default ServicesListItem;
 
 const styles = StyleSheet.create({
+  container: {
+    gap: 8,
+    width: 69,
+    height: 84,
+  },
   serviceBG: {
     width: 63,
     height: 60,
     borderRadius: 15,
     backgroundColor: "#D6FAD1",
+    alignItems: "center",
+    justifyContent: "center",
   },
   serviceText: {
     fontFamily: "Mulish-400",
     color: Colors.blackAlt,
     fontSize: 12,
+    textAlign: "center",
   },
 });

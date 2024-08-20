@@ -1,6 +1,16 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Colors } from "../../../constants/colors";
 import ServicesListItem from "./ServicesListItem";
+import {
+  AirtimeSvg,
+  ArrowServicesSvg,
+  CableTvSvg,
+  ElectricitySvg,
+  InvestSvg,
+  LoanSvg,
+  PayBillsSvg,
+  RemitaSvg,
+} from "../../svgs";
 
 const Services = () => {
   return (
@@ -21,17 +31,45 @@ const Services = () => {
           }}
         >
           <ServicesListItem
-            bgColor="D6FAD1"
-            // svg: React.ReactNode;
-            // serviceText: string;
+            bgColor="#D6FAD1"
+            svg={<ArrowServicesSvg />}
+            serviceText="Send Money"
           />
-          <ServicesListItem />
-          <ServicesListItem />
-          <ServicesListItem />
-          <ServicesListItem />
-          <ServicesListItem />
-          <ServicesListItem />
-          <ServicesListItem />
+          <ServicesListItem
+            bgColor="#F9E7DB"
+            svg={<RemitaSvg />}
+            serviceText="Remita"
+          />
+          <ServicesListItem
+            bgColor="#EFC7B6"
+            svg={<PayBillsSvg />}
+            serviceText="Pay Bills"
+          />
+          <ServicesListItem
+            bgColor="#DDEDF4"
+            svg={<AirtimeSvg />}
+            serviceText="Airtime"
+          />
+          <ServicesListItem
+            bgColor="#FFF2C9"
+            svg={<LoanSvg />}
+            serviceText="Loans"
+          />
+          <ServicesListItem
+            bgColor="#EBEBEB"
+            svg={<CableTvSvg />}
+            serviceText="Cable TV"
+          />
+          <ServicesListItem
+            bgColor="#DDEDF4"
+            svg={<InvestSvg />}
+            serviceText="Invest"
+          />
+          <ServicesListItem
+            bgColor="#BFE9D5"
+            svg={<ElectricitySvg />}
+            serviceText="Electricity"
+          />
         </View>
       </View>
     </View>

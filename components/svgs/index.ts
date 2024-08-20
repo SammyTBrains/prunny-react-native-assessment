@@ -17,3 +17,10 @@ export * from "./CopySvg";
 export * from "./ArrowTransactionsSvg";
 
 export * from "./Services/ArrowServicesSvg";
+export * from "./Services/AirtimeSvg";
+export * from "./Services/CableTvSvg";
+export * from "./Services/ElectricitySvg";
+export * from "./Services/InvestSvg";
+export * from "./Services/LoanSvg";
+export * from "./Services/PayBillsSvg";
+export * from "./Services/RemitaSvg";

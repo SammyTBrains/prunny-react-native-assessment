@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-technical-assessment",
-    "slug": "react-native-technical-assessment",
+    "name": "prunny-react-native-technical-assessment",
+    "slug": "prunny-react-native-technical-assessment",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
