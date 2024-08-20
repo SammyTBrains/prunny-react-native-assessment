@@ -1,6 +1,6 @@
 export type RootNavParamList = {
   AuthScreen: undefined;
-  App: undefined;
+  BankApp: undefined;
   Home: undefined;
   Transactions: undefined;
   Cards: undefined;

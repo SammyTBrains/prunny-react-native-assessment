@@ -52,7 +52,7 @@ export default function App() {
   }
 
   //Bottom tab navigation of the app's various screens
-  const AppNavigation = () => (
+  const BankAppNavigation = () => (
     <BottomTabs.Navigator
       screenOptions={{
         headerShown: false,
@@ -117,7 +117,7 @@ export default function App() {
                   title: "Authentication",
                 }}
               />
-              <Stack.Screen name="App" component={AppNavigation} />
+              <Stack.Screen name="BankApp" component={BankAppNavigation} />
             </Stack.Navigator>
           </NavigationContainer>
         </View>

@@ -24,7 +24,7 @@ type FormData = {
 
 type UsersScreenScreenNavigationProp = NativeStackNavigationProp<
   RootNavParamList,
-  "Home"
+  "BankApp"
 >;
 
 type AuthScreenProps = {
@@ -47,7 +47,7 @@ const AuthScreen = (props: AuthScreenProps) => {
 
   const [passwordVisibile, setPasswordVisible] = useState(false);
 
-  const onSubmit = () => props.navigation.navigate("App");
+  const onSubmit = () => props.navigation.navigate("BankApp");
 
   return (
     <SafeAreaView style={styles.screen}>
