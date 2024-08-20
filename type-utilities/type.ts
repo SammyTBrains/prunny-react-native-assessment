@@ -6,10 +6,3 @@ export type RootNavParamList = {
   Cards: undefined;
   More: undefined;
 };
-
-export type UserDataType = {
-  id: string;
-  name: string;
-  username: string;
-  email: string;
-};

@@ -35,10 +35,6 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
-    "Satoshi-700": require("./assets/fonts/Satoshi-Bold.otf"),
-    "Satoshi-400": require("./assets/fonts/Satoshi-Regular.otf"),
-    "Satoshi-600": require("./assets/fonts/Satoshi-Black.otf"),
-    "Satoshi-500": require("./assets/fonts/Satoshi-Medium.otf"),
     "Mulish-700": require("./assets/fonts/Mulish-Bold.ttf"),
     "Mulish-500": require("./assets/fonts/Mulish-SemiBold.ttf"),
     "Mulish-med": require("./assets/fonts/Mulish-Medium.ttf"),
@@ -55,6 +51,7 @@ export default function App() {
     return null;
   }
 
+  //Bottom tab navigation of the app's various screens
   const AppNavigation = () => (
     <BottomTabs.Navigator
       screenOptions={{

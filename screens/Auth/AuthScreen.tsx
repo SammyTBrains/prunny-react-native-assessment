@@ -4,7 +4,6 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  ActivityIndicator,
 } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import CustomButtonA from "../../components/UI/CustomButtonA";
@@ -32,6 +31,7 @@ type AuthScreenProps = {
   navigation: UsersScreenScreenNavigationProp;
 };
 
+//Screen Component that handles authenticating user
 const AuthScreen = (props: AuthScreenProps) => {
   const {
     control,
@@ -46,13 +46,8 @@ const AuthScreen = (props: AuthScreenProps) => {
   });
 
   const [passwordVisibile, setPasswordVisible] = useState(false);
-  // const [submitting, setSubmitting] = useState(false);
 
-  const onSubmit = () => {
-    // setSubmitting(true);
-    props.navigation.navigate("App");
-    // setSubmitting(false);
-  };
+  const onSubmit = () => props.navigation.navigate("App");
 
   return (
     <SafeAreaView style={styles.screen}>
@@ -67,7 +62,6 @@ const AuthScreen = (props: AuthScreenProps) => {
           </Text>
           <Text style={styles.infoText}>your login details.</Text>
         </View>
-
         <View style={styles.formContainer}>
           <Controller
             control={control}
@@ -144,14 +138,7 @@ const AuthScreen = (props: AuthScreenProps) => {
             <Text style={styles.errorText}>{errors.password.message}</Text>
           )}
         </View>
-        <CustomButtonA onPress={handleSubmit(onSubmit)}>
-          {/* {submitting ? (
-            <ActivityIndicator size="large" color={Colors.greenLight} />
-          ) : (
-            "Login"
-          )} */}
-          Login
-        </CustomButtonA>
+        <CustomButtonA onPress={handleSubmit(onSubmit)}>Login</CustomButtonA>
         <View style={styles.optionsContainer}>
           <TouchableOpacity>
             <Text style={styles.signUpText}>
