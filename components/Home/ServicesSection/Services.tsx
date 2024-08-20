@@ -20,6 +20,17 @@ const Services = () => {
             gap: 16,
           }}
         >
+          <ServicesListItem
+            bgColor="D6FAD1"
+            // svg: React.ReactNode;
+            // serviceText: string;
+          />
+          <ServicesListItem />
+          <ServicesListItem />
+          <ServicesListItem />
+          <ServicesListItem />
+          <ServicesListItem />
+          <ServicesListItem />
           <ServicesListItem />
         </View>
       </View>
