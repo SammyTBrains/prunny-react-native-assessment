@@ -5,31 +5,14 @@ import TransctionListItem from "./TransactionListItem";
 
 const TransactionsSection = () => {
   return (
-    <View style={styles.transactionsSection}>
+    <View>
       <View style={styles.transactionsCard}>
         <View style={styles.transactionsCardsTopRow}>
           <Text style={styles.transactionsCardTopRowText}>
             Recent Transactions
           </Text>
-          <TouchableOpacity
-            style={{
-              width: 75,
-              height: 30,
-              backgroundColor: "rgba(32, 130, 32, 0.1)",
-              borderRadius: 8,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Text
-              style={{
-                fontFamily: "Mulish-400",
-                fontSize: 12,
-                color: Colors.greenPrimary,
-              }}
-            >
-              View all
-            </Text>
+          <TouchableOpacity style={styles.viewAllButton}>
+            <Text style={styles.viewAllText}>View all</Text>
           </TouchableOpacity>
         </View>
         <TransctionListItem
@@ -58,9 +41,6 @@ const TransactionsSection = () => {
 export default TransactionsSection;
 
 const styles = StyleSheet.create({
-  transactionsSection: {
-    marginTop: 32,
-  },
   transactionsHeaderLabel: {
     color: Colors.greenLight,
     fontSize: 13,
@@ -69,6 +49,19 @@ const styles = StyleSheet.create({
   transactionsCard: {
     padding: 24,
     marginTop: 16,
+  },
+  viewAllButton: {
+    width: 75,
+    height: 30,
+    backgroundColor: "rgba(32, 130, 32, 0.1)",
+    borderRadius: 8,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  viewAllText: {
+    fontFamily: "Mulish-400",
+    fontSize: 12,
+    color: Colors.greenPrimary,
   },
   transactionsCardsTopRow: {
     flexDirection: "row",

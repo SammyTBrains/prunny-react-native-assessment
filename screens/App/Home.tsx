@@ -3,6 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import HomeHeader from "../../components/Home/HomeHeader";
 import UserInfoSummary from "../../components/Home/UserInfoSummary";
 import TransactionsSection from "../../components/Home/TransactionsSection/TransactionsSection";
+import Services from "../../components/Home/Services";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <HomeHeader />
         <UserInfoSummary />
+        <Services />
         <TransactionsSection />
       </ScrollView>
     </SafeAreaView>
