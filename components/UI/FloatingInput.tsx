@@ -23,6 +23,7 @@ interface IProps extends TextInputProps {
   containerStyle?: ViewProps["style"];
 }
 
+//Input component with floating label functionality
 export const FloatingInput = forwardRef<TextInput, IProps>(
   (
     {
@@ -118,7 +119,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     backgroundColor: Colors.white,
   },
-
   input: {
     flex: 1,
     width: "100%",

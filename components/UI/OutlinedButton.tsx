@@ -9,6 +9,7 @@ type Props = {
   children: React.ReactNode;
 };
 
+//A custom button - outlined
 const OutlinedButton = (props: Props) => {
   return (
     <Pressable

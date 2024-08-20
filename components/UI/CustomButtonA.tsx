@@ -7,6 +7,7 @@ type Props = {
   children: React.ReactNode;
 };
 
+//A custom button - filled
 const CustomButtonA = (props: Props) => {
   return (
     <Pressable
