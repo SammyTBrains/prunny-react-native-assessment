@@ -3,12 +3,15 @@ import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "../../constants/colors";
 import { ProfileTestSvg } from "../svgs";
 
+//The home page header
+//profile icon, name greeting,
+//notification button and appearance button
 const HomeHeader = () => {
   return (
     <View style={styles.homeHeader}>
-      <View style={{ flexDirection: "row", gap: 4 }}>
+      <View style={styles.homeHeaderLeft}>
         <ProfileTestSvg />
-        <View style={styles.homeHeaderLeft}>
+        <View style={styles.homeHeaderLeftText}>
           <Text style={styles.welcomeText}>Hi, Temitope</Text>
           <Text style={styles.greetingText}>How are you today?</Text>
         </View>
@@ -35,6 +38,10 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
   },
   homeHeaderLeft: {
+    flexDirection: "row",
+    gap: 4,
+  },
+  homeHeaderLeftText: {
     justifyContent: "space-around",
   },
   welcomeText: {
