@@ -2,13 +2,18 @@ import { Text, StyleSheet, View } from "react-native";
 import { ArrowTransactionsSvg } from "../../svgs";
 import { Colors } from "../../../constants/colors";
 
+//types of accepted varrying props- user name,
+//transaction details, transaction amount
+//and updated balance
 type props = {
   name: string;
-  bankDetails: string;
+  transactionDetails: string;
   transactionAmount: string;
-  balance: string;
+  updatedBalance: string;
 };
 
+//Component for each transaction item on the Home page's
+//recent transaction section
 const TransactionListItem = (props: props) => {
   const textColor = props.transactionAmount.startsWith("+")
     ? Colors.greenPrimary
@@ -20,14 +25,14 @@ const TransactionListItem = (props: props) => {
         <ArrowTransactionsSvg />
         <View style={{ gap: 8 }}>
           <Text style={styles.name}>{props.name}</Text>
-          <Text style={styles.smallText}>{props.bankDetails}</Text>
+          <Text style={styles.smallText}>{props.transactionDetails}</Text>
         </View>
       </View>
       <View style={{ gap: 8 }}>
         <Text style={[styles.amount, { color: textColor }]}>
           {props.transactionAmount}
         </Text>
-        <Text style={styles.smallText}>{props.balance}</Text>
+        <Text style={styles.smallText}>{props.updatedBalance}</Text>
       </View>
     </View>
   );

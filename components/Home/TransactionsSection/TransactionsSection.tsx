@@ -3,6 +3,7 @@ import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Colors } from "../../../constants/colors";
 import TransctionListItem from "./TransactionListItem";
 
+//Recent Transactions History Section of home page
 const TransactionsSection = () => {
   return (
     <View>
@@ -17,21 +18,21 @@ const TransactionsSection = () => {
         </View>
         <TransctionListItem
           name="Grace Ameh"
-          bankDetails="15 Oct 2022, 10:00PM"
+          transactionDetails="15 Oct 2022, 10:00PM"
           transactionAmount="+N20,983"
-          balance="NGN156,203.94"
+          updatedBalance="NGN156,203.94"
         />
         <TransctionListItem
-          name="Habib Yogurt"
-          bankDetails="15 Oct 2022, 10:00PM"
+          name="Mike Oshadami"
+          transactionDetails="08 Aug 2020, 11:00AM"
           transactionAmount="-N20,983"
-          balance="NGN156,203.94"
+          updatedBalance="NGN156,203.94"
         />
         <TransctionListItem
           name="Kane Ritchie"
-          bankDetails="15 Oct 2022, 10:00PM"
+          transactionDetails="20 Sept 2018, 10:00PM"
           transactionAmount="-N20,000"
-          balance="NGN156,203.94"
+          updatedBalance="NGN156,203.94"
         />
       </View>
     </View>

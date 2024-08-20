@@ -2,12 +2,15 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Colors } from "../../../constants/colors";
 import React from "react";
 
+//types of accepted varrying props- background color,
+//icon in svg and type of service text
 type props = {
   bgColor: string;
   svg: React.ReactNode;
   serviceText: string;
 };
 
+//Each service items on the service section of the home page
 const ServicesListItem = (props: props) => {
   return (
     <TouchableOpacity style={styles.container}>

@@ -12,6 +12,7 @@ import {
   RemitaSvg,
 } from "../../svgs";
 
+//Services Section of the home page
 const Services = () => {
   return (
     <View>
