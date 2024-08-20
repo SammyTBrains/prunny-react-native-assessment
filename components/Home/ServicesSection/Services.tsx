@@ -22,14 +22,7 @@ const Services = () => {
             <Text style={styles.viewAllText}>View all</Text>
           </TouchableOpacity>
         </View>
-        <View
-          style={{
-            marginTop: 16,
-            flexDirection: "row",
-            flexWrap: "wrap",
-            gap: 16,
-          }}
-        >
+        <View style={styles.servicesItems}>
           <ServicesListItem
             bgColor="#D6FAD1"
             svg={<ArrowServicesSvg />}
@@ -88,6 +81,16 @@ const styles = StyleSheet.create({
     padding: 24,
     marginTop: 16,
   },
+  servicesCardsTopRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  servicesCardTopRowText: {
+    color: Colors.blackAlt,
+    fontSize: 20,
+    fontFamily: "Mulish-700",
+  },
   viewAllButton: {
     width: 75,
     height: 30,
@@ -101,14 +104,10 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: Colors.greenPrimary,
   },
-  servicesCardsTopRow: {
+  servicesItems: {
+    marginTop: 16,
     flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  servicesCardTopRowText: {
-    color: Colors.blackAlt,
-    fontSize: 20,
-    fontFamily: "Mulish-700",
+    flexWrap: "wrap",
+    gap: 16,
   },
 });

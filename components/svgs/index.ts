@@ -15,6 +15,7 @@ export * from "./ProfileTestSvg";
 export * from "./UserInfoSummaryDesign";
 export * from "./CopySvg";
 export * from "./ArrowTransactionsSvg";
+export * from "./TestSlideSvg";
 
 export * from "./Services/ArrowServicesSvg";
 export * from "./Services/AirtimeSvg";

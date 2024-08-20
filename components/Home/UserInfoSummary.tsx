@@ -8,7 +8,7 @@ import {
 } from "react-native";
 
 import * as Clipboard from "expo-clipboard";
-import { CopySvg, UserInfoSummaryDesign } from "../svgs";
+import { CopySvg, TestSlideSvg, UserInfoSummaryDesign } from "../svgs";
 import { useState } from "react";
 import { Colors } from "../../constants/colors";
 
@@ -59,6 +59,9 @@ const UserInfoSummary = () => {
           </View>
         </View>
       </View>
+      <View style={styles.testSlideSvgContainer}>
+        <TestSlideSvg />
+      </View>
     </View>
   );
 };
@@ -83,5 +86,9 @@ const styles = StyleSheet.create({
     fontFamily: "Mulish-700",
     fontSize: 24,
     color: "white",
+  },
+  testSlideSvgContainer: {
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
