@@ -100,13 +100,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     position: "relative",
-    backgroundColor: Colors.white,
+    backgroundColor: "white",
   },
   labelStyle: {
     position: "absolute",
     left: 0,
     fontFamily: "Mulish-500",
-    color: Colors.black,
+    color: Colors.blackApp,
   },
   inputContainer: {
     flexDirection: "row",
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     height: 56,
     paddingHorizontal: 15,
-    backgroundColor: Colors.white,
+    backgroundColor: "white",
   },
   input: {
     flex: 1,
