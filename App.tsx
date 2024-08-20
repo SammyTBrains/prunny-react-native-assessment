@@ -13,7 +13,6 @@ import { View } from "react-native";
 import { RootNavParamList } from "./type-utilities/type";
 import { Colors } from "./constants/colors";
 import Home from "./screens/App/Home";
-import { Ionicons } from "@expo/vector-icons";
 import Transactions from "./screens/App/Transactions";
 import Cards from "./screens/App/Cards";
 import More from "./screens/App/More";
