@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Colors } from "../../constants/colors";
+import { Colors } from "../../../constants/colors";
+import ServicesListItem from "./ServicesListItem";
 
 const Services = () => {
   return (
@@ -10,6 +11,16 @@ const Services = () => {
           <TouchableOpacity style={styles.viewAllButton}>
             <Text style={styles.viewAllText}>View all</Text>
           </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            marginTop: 16,
+            flexDirection: "row",
+            flexWrap: "wrap",
+            gap: 16,
+          }}
+        >
+          <ServicesListItem />
         </View>
       </View>
     </View>
