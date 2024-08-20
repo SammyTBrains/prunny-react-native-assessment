@@ -5,6 +5,7 @@ import UserInfoSummary from "../../components/Home/UserInfoSummary";
 import TransactionsSection from "../../components/Home/TransactionsSection/TransactionsSection";
 import Services from "../../components/Home/ServicesSection/Services";
 
+//The HOME PAGE!
 const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
